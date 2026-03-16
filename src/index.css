@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', sans-serif; background: #F2F2F2; color: #1C1C1C; overflow-x: hidden; }
+  ::selection { background: #FC8019; color: #fff; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #F2F2F2; }
+  ::-webkit-scrollbar-thumb { background: #FC8019; border-radius: 3px; }
+  img { object-fit: cover; }
+}
+
+@layer components {
+  .btn-primary   { @apply bg-sw-orange text-white font-display font-bold px-6 py-3 rounded-lg hover:bg-sw-orangeD transition-all duration-200 hover:shadow-hover active:scale-95; }
+  .btn-outline   { @apply border-2 border-sw-orange text-sw-orange font-display font-bold px-6 py-3 rounded-lg hover:bg-sw-orange hover:text-white transition-all duration-200; }
+  .btn-red       { @apply bg-sw-red text-white font-display font-bold px-6 py-3 rounded-lg hover:bg-sw-redD transition-all duration-200; }
+  .card          { @apply bg-white rounded-2xl shadow-card overflow-hidden; }
+  .card-hover    { @apply card hover:shadow-hover transition-all duration-300 hover:-translate-y-0.5; }
+  .section-pad   { @apply py-12 md:py-16 lg:py-20; }
+  .container-sw  { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .badge-veg     { @apply border-2 border-sw-green; }
+  .badge-nonveg  { @apply border-2 border-sw-red; }
+  .shimmer       { background: linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%); background-size:400px 100%; animation: shimmer 1.5s infinite linear; }
+  .tag           { @apply text-xs font-display font-bold px-2.5 py-1 rounded-full; }
+  .input-sw      { @apply w-full px-4 py-3 bg-sw-light rounded-xl font-body text-sm text-sw-dark placeholder-sw-gray focus:outline-none focus:ring-2 focus:ring-sw-orange/40 border border-transparent focus:border-sw-orange/30 transition-all; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
